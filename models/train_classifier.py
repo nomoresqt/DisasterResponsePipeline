@@ -31,18 +31,7 @@ import subprocess
 
 
 def load_data(database_filepath):
-    #engine = create_engine('sqlite:///DisasterResponse.db')
-    '''
-    engine = create_engine('sqlite:///' + database_filepath)
-    table_name = os.path.basename(database_filepath).replace(".db","") + "_table"
-    df = pd.read_sql_table(table_name,engine)
-    
-    #df = pd.read_sql_table('all_messages', engine)
-    X = df['message']
-    Y = df.drop(['message', 'genre', 'id', 'original'], axis=1)
-    category_names = Y.columns.tolist()
-    '''
-    
+  
     engine = create_engine('sqlite:///' + database_filepath)
     df = pd.read_sql_table('messages', engine)
     X = df['message']
