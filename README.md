@@ -31,6 +31,7 @@ To run this Disaster Response Pipeline, we have to follow the following steps:
 4. Click the `PREVIEW` button to open the homepage
 
 
+<img width="651" alt="Screen Shot 2022-04-22 at 19 13 53" src="https://user-images.githubusercontent.com/6179435/164933837-5213651c-32a8-4f68-9230-c3350c5c5946.png">
 
 
 ![image](https://user-images.githubusercontent.com/6179435/164890438-bc58bf48-3cf5-4bc9-bc3a-84dff686aed7.png)
