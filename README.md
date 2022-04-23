@@ -33,7 +33,7 @@ To run this Disaster Response Pipeline, we have to follow the following steps:
 ## The user interface of the Web App. User can input the text message into the text input box and click the Classify Message buttom
 
 The front page of this Web App contains 2 visiualizations
-See the message below
+See the image below
 
 
 <img width="651" alt="Screen Shot 2022-04-22 at 19 13 53" src="https://user-images.githubusercontent.com/6179435/164933837-5213651c-32a8-4f68-9230-c3350c5c5946.png">
