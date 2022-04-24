@@ -25,24 +25,24 @@ def clean_data(df):
     input: the loaded dataframe
     output: a cleaned data dataframe
     """
-    categories = df['categories'].str.split(pat=';',expand=True)
-
-    #Fix the categories columns name
-    row = categories.iloc[[1]]
-    category_colnames = [category_name.split('-')[0] for category_name in row.values[0]]
+    # Fix the categories columns name
+    categories = df['categories'].str.split(pat=';', expand=True)
+    row = categories.loc[0]
+    colnames = []
+    for entry in row:
+        colnames.append(entry[:-2])
+    category_colnames = colnames
     categories.columns = category_colnames
     
-    #convert all values to boolen & drop the values that is not boolen in 'related'
     for column in categories:
-        categories[column] = categories[column].str[-1]
-        categories[column] = categories[column].astype(np.int)
-        array = [1,0]
-        categories=categories.loc[categories['related'].isin(array)]
-    
-    df = df.drop('categories',axis=1)
-    df = pd.concat([df,categories],axis=1)
-    df = df.drop_duplicates()
-    
+        categories[column] = categories[column].str[-1:]
+        categories[column] = categories[column].astype(int)
+        
+    df.drop('categories', axis=1, inplace=True)
+    df = pd.concat([df, categories], axis=1)
+    df.drop_duplicates(inplace=True)
+    # Removing entry that is non-binary, 'related' contians value as 2 
+    df = df[df['related'] != 2]
     return df
 
 
